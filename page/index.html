@@ -1,0 +1,125 @@
+<!doctype html>
+<html lang="ru">
+	<head>
+		<meta charset="UTF-8" />
+		<meta
+			name="viewport"
+			content="width=device-width, initial-scale=1.0"
+		/>
+		<title>Лабораторная работа 2</title>
+		<link
+			rel="stylesheet"
+			href="styles.css"
+		/>
+	</head>
+	<body>
+		<header>
+			<h1>Лабораторная работа №2</h1>
+			<div>
+				<p>ФИО: Жумагазиев Максим Маратович</p>
+				<p id="group_num">Номер группы: P3214</p>
+				<p>Номер варианта: 504525</p>
+			</div>
+		</header>
+		<main>
+			<h2>Координатная плоскость:</h2>
+			<canvas
+				id="canvas_XYR"
+				width="500"
+				height="500"
+				aria-label="Координатная плоскость с голубой заданной областью."
+			></canvas>
+			<section id="forms">
+				<h2>Введите числа:</h2>
+				<form
+					action=""
+					method="post"
+				>
+					<fieldset>
+						<legend>Изменение X</legend>
+						<p>Выберите число X:</p>
+						<input type="radio" name="x" value="-2" />-2
+						<input type="radio" name="x" value="-1.5" />-1.5
+						<input type="radio" name="x" value="-1" />-1
+						<input type="radio" name="x" value="-0.5" />-0.5
+						<input type="radio" name="x" value="0" />0
+						<input type="radio" name="x" value="0.5" />0.5
+						<input type="radio" name="x" value="1" />1
+						<input type="radio" name="x" value="1.5" />1.5
+						<input type="radio" name="x" value="2" />2
+						<span
+							id="errorX"
+							class="error-message"
+						></span>
+					</fieldset>
+					<fieldset>
+						<legend>Изменение Y</legend>
+						<label for="textY">Введите число Y (-3 … 3):</label>
+						<input
+							id="textY"
+							name="y"
+							type="text"
+							required
+							maxlength="19"
+							placeholder="Впишите число"
+							pattern="-?\d+([.,]\d+)?"
+						/>
+						<span
+							id="errorY"
+							class="error-message"
+						></span>
+					</fieldset>
+					<fieldset>
+						<legend>Изменение R</legend>
+						<p>Выберите число R:</p>
+						<input type="checkbox" name="r" value="1" />1
+						<input type="checkbox" name="r" value="2" />2
+						<input type="checkbox" name="r" value="3" />3
+						<input type="checkbox" name="r" value="4" />4
+						<input type="checkbox" name="r" value="5" />5
+						<span
+							id="errorR"
+							class="error-message"
+						></span>
+					</fieldset>
+					<fieldset class="buttons">
+						<legend>Кнопочки</legend>
+						<input
+							id="submitButton"
+							type="submit"
+							value="Рассчитать"
+						/>
+						<input
+							id="clearButton"
+							type="button"
+							value="Очистить таблицу"
+						/>
+						<span
+							id="errorServer"
+							class="error-message"
+						></span>
+					</fieldset>
+				</form>
+			</section>
+
+			<section class="result">
+				<h2>Результаты попаданий:</h2>
+				<table id="resultTable">
+					<thead>
+						<tr>
+							<th>№</th>
+							<th>X</th>
+							<th>Y</th>
+							<th>R</th>
+							<th>Попал?</th>
+							<th>Время попадания</th>
+							<th>Время работы скрипта</th>
+						</tr>
+					</thead>
+					<tbody id="resultTableBody"></tbody>
+				</table>
+			</section>
+		</main>
+		<script src="script.js"></script>
+	</body>
+</html>

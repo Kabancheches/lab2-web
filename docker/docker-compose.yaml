@@ -1,0 +1,18 @@
+name: lab2
+
+services:
+  fcgi:
+    build:
+      context: ..
+      dockerfile: docker/server/Dockerfile
+    container_name: lab2-fcgi
+
+  web:
+    build:
+      context: ..
+      dockerfile: docker/web/Dockerfile
+    container_name: lab2-web
+    depends_on:
+      - fcgi
+    ports:
+      - '8080:80'
